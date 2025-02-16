@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+:root {
+  /* Colores principales */
+  --color-primary: #14417A;     
+  --color-primary-hover: #316EBD; 
+  
+  /* Colores de texto */
+  --color-text-primary: #232D42;   /* Texto principal oscuro */
+  --color-text-secondary: #8A92A6; /* Texto secundario/subtítulos */
+  --color-text-light: #FFFFFF;     /* Texto en fondos oscuros */
+
+  /* Colores de fondo */
+  --color-background: #F7F7F7;     /* Fondo principal */
+  --color-background-light: #F9F9F9; /* Fondo secundario claro */
+  --color-card: #FFFFFF;           /* Fondo de tarjetas */
+  --background-modal: rgba(0, 0, 0, 0.514);
+  --color-gradient: linear-gradient(63.12deg, #316EBD 15.48%, #14417A 83.18%);
+
+  /* Colores de borde */
+  --color-border: #EEE;           /* Bordes suaves */
+  --color-border-input: #D8DEE6;  /* Bordes para inputs */
+
+  /* Colores de estado */
+  --color-success: #1AA053;       /* Verde éxito */
+  --color-danger: #C03221;        /* Rojo error/peligro */
+  --color-warning: #F16A1B;       /* Naranja advertencia */
+  --color-info: #079AA2;          /* Azul información */
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+  margin:0;
+  padding:0;
+  font-family: "Poppins", sans-serif;
+}
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+fieldset,img { 
+  border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+  font-style:normal;
+  font-weight:normal;
+}
+ol,ul {
+  list-style:none;
+}
+caption,th {
+  text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-size:100%;
+  font-weight:normal;
+}
+q:before,q:after {
+  content:'';
+}
+abbr,acronym { border:0;}

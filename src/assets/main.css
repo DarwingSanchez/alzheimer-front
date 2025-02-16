@@ -1,0 +1,28 @@
+@import './base.css';
+
+
+.background-modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  background-color: var(--background-modal);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.6rem 1.6rem;
+}
+
+.hide-scroll {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE 10+ */
+}
+
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari y Edge */
+}
