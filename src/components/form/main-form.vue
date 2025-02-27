@@ -4,6 +4,7 @@ import type { FormData } from '@/core/interface/form';
 import { diagnostic } from '@/core/services/diagnostic/diagnostic';
 import Modal from '../modal/modal.vue';
 import type { FormResponse } from '@/core/interface/response';
+import Loading from '../loading/loading.vue';
 
 const formKitRef = ref();
 const formData = ref<FormData>({
@@ -55,9 +56,11 @@ const options = {
 
 const results = ref<FormResponse | undefined>(undefined);
 const resultsModal = ref<boolean>(false);
+const loading = ref<boolean>(true);
 
 const submitForm = async () => {
   try {
+    loading.value = true;
     const data = {
       ...formData.value,
       age: Number(formData.value.age),
@@ -66,6 +69,7 @@ const submitForm = async () => {
       cognitiveScore: Number(formData.value.cognitiveScore) * 3,
     };
     results.value = await diagnostic(data);
+    loading.value = false;
     resultsModal.value = true;
     (Object.keys(formData.value) as (keyof FormData)[]).forEach(key => {
       if (typeof formData.value[key] === 'number') {
@@ -76,6 +80,9 @@ const submitForm = async () => {
     });
   } catch (error) {
     console.error('Error submitting form', error);
+    alert('Error obteniendo resultados, por favor intenta de nuevo');
+  } finally {
+    loading.value = false;
   }
 };
 
@@ -83,7 +90,7 @@ const submitForm = async () => {
 
 <template>
   <div class="f-container">
-    <FormKit :ref="formKitRef" type="form" @submit="submitForm" class="form-content">
+    <FormKit v-if="!loading" :ref="formKitRef" type="form" @submit="submitForm" class="form-content">
       <div class="sub-container">
         <FormKit type="text" label="Nombre" placeholder="Escribe tu nombre" v-model="formData.name" required />
         <FormKit type="number" label="Edad" validation="between:50,94" placeholder="Escribe tu edad"
@@ -153,6 +160,7 @@ const submitForm = async () => {
           placeholder="Escribe tu puntaje cognitivo" v-model="formData.cognitiveScore" required />
       </div>      
     </FormKit>
+    <Loading v-else></Loading>
   </div>
   <Modal v-if="resultsModal" :response="results" @close="resultsModal = false"></Modal>
 </template>
