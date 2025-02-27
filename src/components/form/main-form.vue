@@ -64,8 +64,8 @@ const submitForm = async () => {
       educationLevel: Number(formData.value.educationLevel),
       bmi: Number(formData.value.bmi),
       cognitiveScore: Number(formData.value.cognitiveScore) * 3,
-    };    
-    results.value = await diagnostic(data);    
+    };
+    results.value = await diagnostic(data);
     resultsModal.value = true;
     (Object.keys(formData.value) as (keyof FormData)[]).forEach(key => {
       if (typeof formData.value[key] === 'number') {
@@ -151,7 +151,7 @@ const submitForm = async () => {
           required />
         <FormKit type="number" label="Puntaje Cognitivo" validation="between:0,100"
           placeholder="Escribe tu puntaje cognitivo" v-model="formData.cognitiveScore" required />
-      </div>
+      </div>      
     </FormKit>
   </div>
   <Modal v-if="resultsModal" :response="results" @close="resultsModal = false"></Modal>
@@ -195,17 +195,131 @@ const submitForm = async () => {
   }
 }
 
-.submit-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+:deep(.formkit-outer) {
+  margin-bottom: 1.5rem;
 }
 
-.submit-button:hover {
-  background-color: #0056b3;
+:deep(.formkit-label) {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+:deep(.formkit-input) {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+:deep(.formkit-input:focus) {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+  background-color: #fff;
+}
+
+:deep(.formkit-input::placeholder) {
+  color: #aaa;
+}
+
+:deep(.formkit-help) {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+:deep(.formkit-message) {
+  color: #e53935;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+:deep(.formkit-select) {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  padding-right: 2.5rem;
+}
+
+:deep(.formkit-option.placeholder-option) {
+  color: #aaa;
+}
+
+:deep(input[type="number"]) {
+  -moz-appearance: textfield;
+}
+
+:deep(input[type="number"]::-webkit-inner-spin-button),
+:deep(input[type="number"]::-webkit-outer-spin-button) {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+:deep(.formkit-actions) {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+:deep(.formkit-submit) {
+  background-color: #4a90e2;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+:deep(.formkit-submit:hover) {
+  background-color: #3a7bc8;
+}
+
+:deep(.formkit-submit:focus) {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+:deep(.formkit-input:disabled) {
+  background-color: #f1f1f1;
+  color: #999;
+  cursor: not-allowed;
+}
+
+:deep(.formkit-input) {
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+:deep(.formkit-wrapper) {
+  width: 100%;
+  max-width: 100%;
+}
+
+:deep(.formkit-outer) {
+  width: 100%;
+}
+
+:deep(.formkit-input[data-invalid]) {
+  border-color: #e53935;
+  background-color: #fff;
+}
+
+:deep(.formkit-input[data-invalid]:focus) {
+  box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.1);
 }
 </style>
