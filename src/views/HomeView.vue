@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { goTo } from '@/core/util/util-functions';
+
 </script>
 
 <template>
@@ -11,10 +13,10 @@
           tempranos de Alzheimer y proporcionar información útil sobre tu salud
           cognitiva.
         </p>
-        <button>Comenzar Diagnóstico</button>
+        <button @click="goTo('/diagnosticar')">Comenzar Diagnóstico</button>
       </div>
       <div class="image">
-        <img src="" alt="Ilustración de IA analizando el cerebro" />
+        <img src="/images/grandpa.jpg" alt="Ilustración de IA analizando el cerebro" />
       </div>
     </section>
 
@@ -72,13 +74,15 @@ main {
 .hero {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 30px;
   align-items: center;
   padding: 60px 10%;
   background: #eaf6ff;
 }
 
 .hero .content {
-  max-width: 50%;
+  max-width: 49%;
 }
 
 .hero h1 {
@@ -112,8 +116,12 @@ main {
   background: #023e8a;
 }
 
+.hero .image {
+  max-width: 49%;
+}
+
 .hero .image img {
-  max-width: 400px;
+  width: 100%;
 }
 
 /* How It Works */

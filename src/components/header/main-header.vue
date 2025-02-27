@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { goTo } from "@/core/util/util-functions";
 import { ref } from "vue";
 
 const menuOpen = ref(false);
@@ -8,15 +9,13 @@ const menuOpen = ref(false);
   <header class="header">
     <div class="container">
       <div class="logo">
-        <h1>NeuroCheck <span>AI</span></h1>
+        <h1 @click="goTo('/')">NeuroCheck <span>AI</span></h1>
       </div>
 
       <nav :class="{ 'nav-open': menuOpen }">
         <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Cómo Funciona</a></li>
-          <li><a href="#">Resultados</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/diagnosticar">Diagnosticar</a></li>
         </ul>
       </nav>
 
@@ -43,6 +42,7 @@ const menuOpen = ref(false);
 }
 
 .logo h1 {
+  cursor: pointer;
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 1px;
