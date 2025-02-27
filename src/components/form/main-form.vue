@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import '@formkit/vue';
 import type { FormData } from '@/core/interface/form';
 import { diagnostic } from '@/core/services/diagnostic/diagnostic';
 import Modal from '../modal/modal.vue';
