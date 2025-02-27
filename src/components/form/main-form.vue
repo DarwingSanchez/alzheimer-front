@@ -56,7 +56,7 @@ const options = {
 
 const results = ref<FormResponse | undefined>(undefined);
 const resultsModal = ref<boolean>(false);
-const loading = ref<boolean>(true);
+const loading = ref<boolean>(false);
 
 const submitForm = async () => {
   try {
