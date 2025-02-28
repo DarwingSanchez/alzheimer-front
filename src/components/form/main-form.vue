@@ -97,12 +97,12 @@ const submitForm = async () => {
           v-model="formData.age" required />
       </div>
       <div class="sub-container">
-        <FormKit type="select" label="Genero" v-model="formData.gender" :options="options.gender" required />
+        <FormKit type="select" label="Género" v-model="formData.gender" :options="options.gender" required />
         <FormKit type="select" label="Nivel Educativo" v-model="formData.educationLevel"
           :options="options.educationLevel" required />
       </div>
       <div class="sub-container">
-        <FormKit type="number" validation="between:18,25" label="IMC" placeholder="Indice de masa corporal"
+        <FormKit type="number" validation="between:18,25" label="Indice Masa Corporal" placeholder="Indice de masa corporal"
           v-model="formData.bmi" required />
         <FormKit type="select" label="Nivel Actividad Física" v-model="formData.physicalActivity"
           :options="options.physicalActivity" required />
@@ -132,11 +132,11 @@ const submitForm = async () => {
       <div class="sub-container">
         <FormKit type="select" label="Estado Civil" v-model="formData.maritalStatus" :options="options.maritalStatus"
           required />
-        <FormKit type="select" label="Factor Riesgo Genético (alelo APOE-ε4)" v-model="formData.geneticRisk"
+        <FormKit type="select" label="Tiene prueba positiva (alelo APOE-ε4)" v-model="formData.geneticRisk"
           :options="options.yesNo" required />
       </div>
       <div class="sub-container">
-        <FormKit type="select" label="Nivel Compromiso Social" v-model="formData.socialEngagement"
+        <FormKit type="select" label="Nivel Iteración Social" v-model="formData.socialEngagement"
           :options="options.socialEngagement" required />
         <FormKit type="select" label="Nivel Ingreso" v-model="formData.incomeLevel" :options="options.incomeLevel"
           required />
@@ -154,9 +154,9 @@ const submitForm = async () => {
           required />
       </div>
       <div class="sub-container">
-        <FormKit type="select" label="Historia Familiar" v-model="formData.familyHistory" :options="options.yesNo"
+        <FormKit type="select" label="Historial Familiar de Alzheimer" v-model="formData.familyHistory" :options="options.yesNo"
           required />
-        <FormKit type="number" label="Puntaje Cognitivo" validation="between:0,100"
+        <FormKit type="number" label="Puntaje Cognitivo (Mini-mental Test)" validation="between:14,34"
           placeholder="Escribe tu puntaje cognitivo" v-model="formData.cognitiveScore" required />
       </div>      
     </FormKit>

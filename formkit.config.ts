@@ -10,17 +10,14 @@ export default defaultConfig({
         required: () => "Campo requerido.",
         length: () => "Longitud inválida.",
         email: () => "Por favor ingrese un correo electrónico válido.",
-        between: (node) => {          
-          console.log(node.name);
+        between: (node) => {                    
           switch (node.name) {
             case 'Edad':
-              return "La edad debe estar entre 50 y 94.";
-            case 'Años de educación':
-              return "La educación deben estar entre 0 y 19.";                                  
-            case 'IMC':
+              return "La edad debe estar entre 50 y 94.";                                 
+            case 'Indice Masa Corporal':
               return "El IMC debe estar entre 18 y 25.";
-            case 'Puntaje Cognitivo':
-              return 'El puntaje cognitivo debe estar entre 0 y 100.';
+            case 'Puntaje Cognitivo (Mini-mental Test)':
+              return 'El puntaje cognitivo debe estar entre 14 y 34.';            
           }
           return "Valor inválido.";
         },

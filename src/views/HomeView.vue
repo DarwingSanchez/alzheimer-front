@@ -26,7 +26,7 @@ import { goTo } from '@/core/util/util-functions';
         <div class="step">
           <h3>1. Sube tu Información</h3>
           <p>
-            Proporciona datos como imágenes médicas y respuestas a cuestionarios
+            Proporciona datos médicos y respuestas a cuestionarios
             cognitivos.
           </p>
         </div>
