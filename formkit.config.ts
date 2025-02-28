@@ -15,7 +15,7 @@ export default defaultConfig({
             case 'Edad':
               return "La edad debe estar entre 50 y 94.";                                 
             case 'Indice Masa Corporal':
-              return "El IMC debe estar entre 18 y 25.";
+              return "El IMC debe estar entre 18 y 35.";
             case 'Puntaje Cognitivo (Mini-mental Test)':
               return 'El puntaje cognitivo debe estar entre 14 y 34.';            
           }

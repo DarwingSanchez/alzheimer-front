@@ -36,7 +36,7 @@ const formData = ref<FormData>({
 
 const options = {
   gender: [{ value: '', label: 'Seleccionar...', class: 'placeholder-option' }, { value: 'Male', label: 'Masculino' }, { value: 'Female', label: 'Femenino' }],
-  educationLevel: [{ value: '', label: 'Seleccionar...', class: 'placeholder-option' }, { value: 0, label: 'Sin educación formal' }, { value: 3, label: 'Primaria incompleta' }, { value: 6, label: 'Primaria completa' }, { value: 10, label: 'Secundaria' }, { value: 13, label: 'Universitaria' }, { value: 17, label: 'Posgrado' }],
+  educationLevel: [{ value: '', label: 'Seleccionar...', class: 'placeholder-option' }, { value: 1, label: 'Sin educación formal' }, { value: 3, label: 'Primaria incompleta' }, { value: 6, label: 'Primaria completa' }, { value: 10, label: 'Secundaria' }, { value: 13, label: 'Universitaria' }, { value: 17, label: 'Posgrado' }],
   physicalActivity: [{ value: '', label: 'Seleccionar...', class: 'placeholder-option' }, { value: 'Low', label: 'Baja' }, { value: 'Medium', label: 'Media' }, { value: 'High', label: 'Alta' }],
   smokingStatus: [{ value: '', label: 'Seleccionar...', class: 'placeholder-option' }, { value: 'Never', label: 'Nunca' }, { value: 'Former', label: 'Exfumador' }, { value: 'Current', label: 'Actual' }],
   alcoholConsumption: [{ value: '', label: 'Seleccionar...', class: 'placeholder-option' }, { value: 'Never', label: 'Nunca' }, { value: 'Occasionally', label: 'Ocasionalmente' }, { value: 'Regularly', label: 'Regularmente' }],
@@ -102,7 +102,7 @@ const submitForm = async () => {
           :options="options.educationLevel" required />
       </div>
       <div class="sub-container">
-        <FormKit type="number" validation="between:18,25" label="Indice Masa Corporal" placeholder="Indice de masa corporal"
+        <FormKit type="number" validation="between:18,35" label="Indice Masa Corporal" placeholder="Indice de masa corporal"
           v-model="formData.bmi" required />
         <FormKit type="select" label="Nivel Actividad Física" v-model="formData.physicalActivity"
           :options="options.physicalActivity" required />
